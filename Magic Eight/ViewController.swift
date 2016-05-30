@@ -27,7 +27,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var nameTextField: NSTextField!
     
     @IBAction func handleBallClick(sender: AnyObject) {
-        if(adviceLabel.hidden) {
+        if let advice = adviceList.randomElement {
+            adviceLabel.stringValue = advice
             adviceLabel.hidden = false
             ballImageView.image = NSImage(named: "magic8ball")
         } else {
